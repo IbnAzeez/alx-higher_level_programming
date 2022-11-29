@@ -1,4 +1,4 @@
-ifndef LIST
+#ifndef LIST
 #define LIST
 
 #include <stdlib.h>
