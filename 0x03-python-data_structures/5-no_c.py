@@ -2,6 +2,6 @@
 def no_c(my_string):
     new = ''
     for char in my_string:
-        if char not in (ord('c'), ord('C')):
+        if char not in ('c', 'C'):
             new += char
     return new
