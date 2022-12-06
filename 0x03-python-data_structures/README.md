@@ -19,3 +19,5 @@
 9-max_integer.py finds the biggest integer of a list.
 
 10-divisible_by_2.py finds all multiples of 2 in a list. 
+
+11-delete_at.py deletes the item at a specific position in a list.
