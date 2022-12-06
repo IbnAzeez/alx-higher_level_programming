@@ -23,3 +23,5 @@
 11-delete_at.py deletes the item at a specific position in a list.
 
 12-switch.py switch value of a and b
+
+13-is_palindrome.c checks if a singly linked list is a palindrome.
