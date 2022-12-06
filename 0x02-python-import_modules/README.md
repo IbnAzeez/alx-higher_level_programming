@@ -13,3 +13,5 @@
 100-my_calculator.py imports all functions from the file calculator_1.py and handles basic operations.
 
 101-easy_print.py prints #pythoniscool, followed by a new line, in the standard output.
+
+103-fast_alphabet.py prints the alphabet in uppercase, followed by a new line.
