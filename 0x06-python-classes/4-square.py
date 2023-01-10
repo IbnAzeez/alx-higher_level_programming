@@ -23,6 +23,7 @@ class Square:
     @property
     def size(self):
         return self.__size
+
     @size.setter
     def size(self, value):
         """size method that set size attribute to value
