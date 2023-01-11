@@ -34,4 +34,4 @@ class Student:
                 continue
             if hasattr(self, attr):
                 json[attr] = getattr(self, attr)
-        return 
+        return json
