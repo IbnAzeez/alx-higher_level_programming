@@ -4,10 +4,10 @@
 
 import json
 
-def to_json_string(prmObj):
+def to_json_string(my_obj):
     """
         function to generate a json from an object
         Args:
-            prmObj: object
+            my_obj: object
     """
-    return json.dumps(prmObj)
+    return json.dumps(my_obj)
