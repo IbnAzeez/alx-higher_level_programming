@@ -3,7 +3,7 @@
 
 
 def pascal_triangle(prmN):
-    ""
+    """
         Function that define a Pascal triangle
         Args:
             prmN: size of the triangle
