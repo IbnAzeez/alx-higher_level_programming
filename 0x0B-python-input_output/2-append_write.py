@@ -13,4 +13,4 @@ def append_write(prmFileName="", prmText=""):
     with open(prmFileName, 'a', encoding="UTF-8") as file:
         character = file.write(prmText)
     file.closed
-    return 
+    return character
