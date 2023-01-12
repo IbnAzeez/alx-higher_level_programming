@@ -6,6 +6,7 @@ This module contains a class that defines a rectangle.
 
 class Rectangle():
     """Defines a rectangle."""
+
     number_of_instances = 0
 
     def __init__(self, width=0, height=0):
@@ -25,9 +26,8 @@ class Rectangle():
         if self.__width > 0 and self.__height > 0:
             for y in range(self.__height):
                 rectangle += '#' * self.__width + '\n'
+    
         return rectangle[:-1]
-
-
 
     def __repr__(self):
         """Sets the repr behavior of the Rectangle object."""
