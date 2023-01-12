@@ -7,7 +7,7 @@ class Rectangle:
     height = None
     width = None
 	
-    def __init__(self, prmWidth=0, prmHeight=0):
+    def __init__(self, width=0, height=0):
     	self.height = height
         self.width = width
 
