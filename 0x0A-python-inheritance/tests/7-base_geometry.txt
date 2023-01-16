@@ -3,6 +3,7 @@ The ``7-base_geometry`` module
 
 Using ``BaseGeometry``
 -------------------
+
 This is an example text file in reStructuredText format.  First import
 ``BaseGeometry`` from the ``7-base_geometry`` module:
 __________________________________________________________________________________
@@ -12,10 +13,12 @@ ________________________________________________________________________________
 Module documentation test
 >>> len(__import__("7-base_geometry").__doc__) > 0
 True
+
 __________________________________________________________________________________
 Function documentation test
 >>> len(__import__("7-base_geometry").BaseGeometry.__doc__) > 0
 True
+
 __________________________________________________________________________________
 >>> bg = BaseGeometry()
 
