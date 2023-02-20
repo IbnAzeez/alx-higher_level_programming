@@ -6,7 +6,7 @@ def text_indentation(text):
     """ text_indentation function
     this function split a text by punctuation
     Attributes:
-        prmText: text to split
+        text: text to split
     """
     if not isinstance(text, str):
         raise TypeError("text must be a string")
