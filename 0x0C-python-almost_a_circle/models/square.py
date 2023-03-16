@@ -1,87 +1,68 @@
 #!/usr/bin/python3
-""" Square module """
+"""This module contains a square class"""
 
-
-from models.base import Base
 from models.rectangle import Rectangle
 
 
 class Square(Rectangle):
-    """ Square class """
-
-    def __init__(self, prmSize, prmX=0, prmY=0, prmId=None):
-        """
-            Constructor function
-            Args:
-                prmWidth:  width
-                prmHeight: height
-                prmX:      left margin
-                prmY:      top margin
-                prmId:     id
-        """
-        super().__init__(
-            prmWidth=prmSize,
-            prmHeight=prmSize,
-            prmX=prmX,
-            prmY=prmY,
-            prmId=prmId
-        )
+    """Represents a square"""
+    def __init__(self, size, x=0, y=0, id=None):
+        self.size = size
+        self.x = x
+        self.y = y
+        self.id = None
+        super().__init__(size, size, x, y, id)
 
     def __str__(self):
-        """
-            Function that return a string representation of the square
-        """
-        return "[Square] ({:d}) {:d}/{:d} - {:d}".format(
-            self.id,
-            self.x,
-            self.y,
-            self.width
-        )
+        """Defines a format for the string representation of the class"""
+        return f"[Square] ({self.id}) {self.x}/{self.y} - {self.size}"
 
     @property
     def size(self):
-        """ y getter """
-        return self.width
+        """Gets the value of size"""
+        return self.__width
 
     @size.setter
-    def size(self, prmValue):
-        """ size setter """
-        Base.strict_integer_validation("size", prmValue)
-        self.width = prmValue
-        self.height = prmValue
+    def size(self, value):
+        """Sets the value for size"""
+        if type(value) is not int:
+            raise TypeError("width must be an integer")
+        if value <= 0:
+            raise ValueError("width must be > 0")
+        self.__width = value
+        self.__height = value
 
-    def update(self, *prmArgs, **prmKArgs):
-        """
-            Function that assigns an argument to each attribute
-            Args:
-                prmArgs: argument's array
-                prmKArgs: argument's dictionary
-        """
-        if len(prmArgs) > 0:
-            if len(prmArgs) > 0:
-                self.strict_integer_validation("id", prmArgs[0])
-                self.id = prmArgs[0]
-            if len(prmArgs) > 1:
-                self.width = prmArgs[1]
-                self.height = prmArgs[1]
-            if len(prmArgs) > 2:
-                self.x = prmArgs[2]
-            if len(prmArgs) > 3:
-                self.y = prmArgs[3]
+    def update(self, *args, **kwargs):
+        """Updates attributes of an instance"""
+
+        if args is not None and len(args) != 0:
+            if len(args) >= 1:
+                if type(args[0]) != int and args[0] is not None:
+                    raise TypeError("id must be an integer")
+                self.id = args[0]
+            if len(args) > 1:
+                self.size = args[1]
+            if len(args) > 2:
+                self.x = args[2]
+            if len(args) > 3:
+                self.y = args[3]
         else:
-            if "id" in prmKArgs:
-                self.strict_integer_validation("id", prmKArgs["id"])
-                self.id = prmKArgs["id"]
-            if "size" in prmKArgs:
-                self.width = prmKArgs["size"]
-                self.height = prmKArgs["size"]
-            if "x" in prmKArgs:
-                self.x = prmKArgs["x"]
-            if "y" in prmKArgs:
-                self.y = prmKArgs["y"]
+            for key, value in kwargs.items():
+                if key == "id":
+                    if type(value) != int and value is not None:
+                        raise TypeError("id must be an integer")
+                    self.id = value
+                if key == "size":
+                    self.size = value
+                if key == "x":
+                    self.x = value
+                if key == "y":
+                    self.y = value
 
     def to_dictionary(self):
-        """
-            Function that returns the dictionary representation of the instance
-        """
-        return {"x": self.x, "y": self.y, "id": self.id, "size": self.size}
+        """Returns the dictionary representation of a Square"""
+
+        obj_dictionary = {'id': self.id, 'size': self.size, 'x': self.x,
+                          'y': self.y}
+
+        return 
